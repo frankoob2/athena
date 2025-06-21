@@ -1,6 +1,6 @@
 pkgname=athena-cinnamon-base
 pkgver=1.0.4
-pkgrel=2
+pkgrel=3
 pkgdesc="Cinnamon base configuration for Athena."
 arch=('any')
 license=("custom")

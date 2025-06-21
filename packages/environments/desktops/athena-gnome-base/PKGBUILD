@@ -1,6 +1,6 @@
 pkgname=athena-gnome-base
 pkgver=1.0.4
-pkgrel=3
+pkgrel=4
 pkgdesc="GNOME base configuration for Athena."
 arch=('any')
 license=("custom")
