@@ -1,6 +1,6 @@
 pkgname=athena-fish
 pkgver=1.0.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Fish for Athena."
 arch=('any')
 license=("custom")

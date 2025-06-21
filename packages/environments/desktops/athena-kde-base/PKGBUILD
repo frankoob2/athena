@@ -1,11 +1,11 @@
 pkgname=athena-kde-base
 pkgver=1.0.2
-pkgrel=3
+pkgrel=4
 pkgdesc="KDE base configuration for Athena."
 arch=('any')
 license=("custom")
 depends=('bluez-qt' 'discover' 'dolphin' 'elisa' 'gwenview' 'kcalc' 'kde-gtk-config' 'kdeconnect' 'kdeplasma-addons' 'kfind' 'kinfocenter' 'kmenuedit' 'kpipewire' 'kscreen' 'kservice5' 'kwin-effects-kinetic' 'kwrite' 'plasma-browser-integration' 'plasma-desktop' 'plasma-nm' 'plasma-systemmonitor' 'plasma-thunderbolt' 'plasma-vault' 'plasma-welcome' 'plasma-workspace' 'plasma-pa' 'polkit-kde-agent' 'spectacle' 'systemsettings' 'xdg-desktop-portal-kde')
-source=("applications-kmenuedit.menu"
+source=("athena-plasma-applications.menu"
         "kwinrc"
         "kwinrulesrc"
         "kde-init.desktop"
@@ -21,15 +21,15 @@ sha512sums=('95b77baa43bc02b79761b18fae7c1b58dfdae029ba327d9fb7be6a1eb9c88d728bc
 package() {
   install -dm 755 "${pkgdir}/etc/skel/.config"
   install -dm 755 "${pkgdir}/etc/xdg/autostart"
-  install -dm 755 "${pkgdir}/etc/xdg/menus"
+  install -dm 755 "${pkgdir}/etc/xdg/menus/applications-merged"
   install -dm 755 "${pkgdir}/usr/bin"
 
   install -Dm644 "${srcdir}/kwinrc" "${pkgdir}/etc/skel/.config/"
   install -Dm644 "${srcdir}/kwinrulesrc" "${pkgdir}/etc/skel/.config/"
   install -Dm644 "${srcdir}/plasma-org.kde.plasma.desktop-appletsrc" "${pkgdir}/etc/skel/.config/"
   install -Dm644 "${srcdir}/kde-init.desktop" "${pkgdir}/etc/xdg/autostart/"
-  install -Dm644 "${srcdir}/applications-kmenuedit.menu" "${pkgdir}/etc/xdg/menus/"
+  install -Dm644 "${srcdir}/athena-plasma-applications.menu" "${pkgdir}/etc/xdg/menus/applications-merged/athena-plasma-applications.menu"
   install -Dm755 "${srcdir}/kde-init" "${pkgdir}/usr/bin/"
   touch "${pkgdir}/etc/skel/.flag-kde-once"
-  kbuildsycoca5
+  kbuildsycoca6
 }

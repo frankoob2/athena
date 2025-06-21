@@ -6,5 +6,5 @@ Icon=athena-bulk-extractor
 StartupNotify=false
 Terminal=false
 Type=Application
-Categories=11-forensics;
+Categories=red-11-forensics;
 X-Athena-Package=bulk-extractor
