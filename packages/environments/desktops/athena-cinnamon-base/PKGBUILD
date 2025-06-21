@@ -1,6 +1,6 @@
 pkgname=athena-cinnamon-base
 pkgver=1.0.4
-pkgrel=1
+pkgrel=2
 pkgdesc="Cinnamon base configuration for Athena."
 arch=('any')
 license=("custom")
@@ -10,7 +10,7 @@ source=("2.json"
         "athena-cinnamon-applications.menu"
         "cinnamon-init.desktop"
         "cinnamon-init")
-sha512sums=('4874b6b883bec819715d86a34d972a7d2726b834162096d9285a2ad22fc20b8d4a67fe0423f6e79628d764b88963d2e0f662a67633a71da1a2558e053580a88b'
+sha512sums=('35bbe594250622d78c31f8cd5379c5fd98f3e70314ee936d219a20605e45666473a7861efb27e0cd3c4f2407269f54800f543dfe7273e6db8c0149a164c89b3f'
             '35baee57164b41da2dcf4f6565a59874e71d1031016a839f3a12c628adf413570eba015d8c76c55eb79b8582269d42142d9f9411724d9f524808e7bcf1ab24a8'
             '18be03489ad15d8acb9068bc7de0193e7f9b14222d8eefe97e656f33a98ceaf523182057d75b4b59172f9d636df548358e02f676facf187e3f6d0e6098646102'
             '4a8545498758c510cd919170ddffdb87cb10cdcc720df024ebb8be6ea3e4421834b93f9a1c968180c9b0c95a977c296e79a81383daaead8270ef455ebf10353c'
