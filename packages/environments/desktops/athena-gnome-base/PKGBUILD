@@ -8,7 +8,7 @@ depends=('eog' 'gnome-characters' 'gnome-control-center' 'gnome-keyring' 'gnome-
 source=("athena-gnome-applications.menu"
         "gnome-init.desktop"
         "gnome-init")
-sha512sums=('aa55e8094b5ce8113c8df2182fe3d1842c53431f5b2e2f9f5d92348a1844cfb47acc4a07ce55a3c93fcec67122e48624613e60aa957c9aced10059be3b1f5de7'
+sha512sums=('1298528a3e182b9e0402f387631e14c899f0aa31bb123127d2a5a1be2aff43778881897fde8c738c6dcc2d2217e4fe3dcaf33ebd50ffd0574c9afe9211a805ee'
             '5d10503e9aa98aed969899d3b0383225f5f2a86ac49a6983f44dd4aca1ce5487f824c19295da32640a70146e8c6690c1aeffafb9571d08b4a752ed430f319813'
             'e62674b0afb9efd1489098e0ab2de663ca62b5dabf513e07a7af80947a82b4bf3755fd440d075990e83caa944f6658de9bab5d4b2cb0bff6d438c7818398d578')
 
