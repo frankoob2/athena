@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # You can change this to another runner (e.g., `macos-latest`, `windows-latest`)
+    runs-on: self-hosted  # You can change this to another runner (e.g., `macos-latest`, `windows-latest`)
     container:
       image: athenaos/base-devel:latest
       options: --privileged  # Needed for hwclock
@@ -77,7 +77,7 @@ jobs:
           info() { echo "INFO:" "$@"; }
 
           #info "Generate ${{env.IMAGE_NAME}}.vmdk"
-          #qemu-img convert -O vmdk ${{env.IMAGE_NAME}}.raw ${{env.IMAGE_NAME}}.vmdk
+          qemu-img convert -O vmdk ${{env.IMAGE_NAME}}.raw ${{env.IMAGE_NAME}}.vmdk
 
           #info "Generate ${{env.IMAGE_NAME}}.ovf"
           #$SCRIPTSDIR/generate-ovf.sh ${{env.IMAGE_NAME}}.vmdk
@@ -92,7 +92,7 @@ jobs:
           
 
           info "Generate ${{env.IMAGE_NAME}}.vdi"
-          qemu-img convert -O vdi ${{env.IMAGE_NAME}}.raw ${{env.IMAGE_NAME}}.vdi
+          #qemu-img convert -O vdi ${{env.IMAGE_NAME}}.raw ${{env.IMAGE_NAME}}.vdi
 
           info "Generate ${{env.IMAGE_NAME}}.vbox"
           $SCRIPTSDIR/generate-vbox.sh ${{env.IMAGE_NAME}}.vdi
