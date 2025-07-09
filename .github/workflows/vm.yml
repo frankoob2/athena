@@ -18,7 +18,7 @@ jobs:
       fail-fast: false  # Ensure all matrix jobs continue even if one fails
       matrix:
         config_installer:
-          - { desktop: "gnome", displaymanager: "Astronaut", theme: "temple", terminal: "gnome terminal", shell: "fish", browser: "firefox", job_name: "Arch-based Install Test (GNOME)", config_file: "arch.json", installer: "aegis-arch" }
+          - { desktop: "xfce picom", displaymanager: "Post-Apocalypse", theme: "graphite", terminal: "gnome terminal", shell: "fish", browser: "firefox", job_name: "Arch-based Install Test (GNOME)", config_file: "arch.json", installer: "aegis-arch" }
 
     name: ${{ matrix.config_installer.job_name }}  # Dynamically assign the job name based on the matrix
 
