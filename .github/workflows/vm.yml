@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted  # You can change this to another runner (e.g., `macos-latest`, `windows-latest`)
+    runs-on: ubuntu-latest  # You can change this to another runner (e.g., `macos-latest`, `windows-latest`)
     container:
       image: athenaos/base-devel:latest
       options: --privileged  # Needed for hwclock
@@ -97,10 +97,10 @@ jobs:
           info "Generate ${{env.IMAGE_NAME}}.vbox"
           $SCRIPTSDIR/generate-vbox.sh ${{env.IMAGE_NAME}}.vdi
 
-          info "Compress to ${{env.IMAGE_NAME}}.7z"
-          mkdir ${{env.IMAGE_NAME}}
-          mv ${{env.IMAGE_NAME}}.vdi ${{env.IMAGE_NAME}}.vbox ${{env.IMAGE_NAME}}
-          7zr a -sdel -mx=9 ${{env.IMAGE_NAME}}.7z ${{env.IMAGE_NAME}}
+          #info "Compress to ${{env.IMAGE_NAME}}.7z"
+          #mkdir ${{env.IMAGE_NAME}}
+          #mv ${{env.IMAGE_NAME}}.vdi ${{env.IMAGE_NAME}}.vbox ${{env.IMAGE_NAME}}
+          #7zr a -sdel -mx=9 ${{env.IMAGE_NAME}}.7z ${{env.IMAGE_NAME}}
 
           echo "Creating checksums for : ${{env.IMAGE_NAME}}.7z"
           echo
