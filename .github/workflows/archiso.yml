@@ -64,16 +64,16 @@ jobs:
           cd scripts
           ./build-iso.sh
           
-      - name: Upload to Athena OS Mirror
-        run: |
-          sshpass -p "${{ secrets.MIRROR_SECRET }}" rsync -avzzlr --delete -e "ssh -p 1027 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" $HOME/Athena-Out/${{env.ATHENA_ID}}-${{env.ISO_VERSION}}-${{env.ISO_ARCHITECTURE}}.iso $HOME/Athena-Out/${{env.ATHENA_ID}}-${{env.ISO_VERSION}}-${{env.ISO_ARCHITECTURE}}.iso.md5 $HOME/Athena-Out/${{env.ATHENA_ID}}-${{env.ISO_VERSION}}-${{env.ISO_ARCHITECTURE}}.iso.sha1 $HOME/Athena-Out/${{env.ATHENA_ID}}-${{env.ISO_VERSION}}-${{env.ISO_ARCHITECTURE}}.iso.sha256 $HOME/Athena-Out/${{env.ATHENA_ID}}-${{env.ISO_VERSION}}-${{env.ISO_ARCHITECTURE}}.iso.sha512 ${{ secrets.MIRROR_USER }}@hub.athenaos.org:/srv/mirrors/athena-images/rolling/
+     # - name: Upload to Athena OS Mirror
+      #  run: |
+      #    sshpass -p "${{ secrets.MIRROR_SECRET }}" rsync -avzzlr --delete -e "ssh -p 1027 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" $HOME/Athena-Out/${{env.ATHENA_ID}}-${{env.ISO_VERSION}}-${{env.ISO_ARCHITECTURE}}.iso $HOME/Athena-Out/${{env.ATHENA_ID}}-${{env.ISO_VERSION}}-${{env.ISO_ARCHITECTURE}}.iso.md5 $HOME/Athena-Out/${{env.ATHENA_ID}}-${{env.ISO_VERSION}}-${{env.ISO_ARCHITECTURE}}.iso.sha1 $HOME/Athena-Out/${{env.ATHENA_ID}}-${{env.ISO_VERSION}}-${{env.ISO_ARCHITECTURE}}.iso.sha256 $HOME/Athena-Out/${{env.ATHENA_ID}}-${{env.ISO_VERSION}}-${{env.ISO_ARCHITECTURE}}.iso.sha512 ${{ secrets.MIRROR_USER }}@hub.athenaos.org:/srv/mirrors/athena-images/rolling/
 
       - name: Upload to GitHub Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cd $GITHUB_WORKSPACE
-          git clone https://github.com/Athena-OS/athena
+          git clone https://github.com/frankoob2/athena
           cd athena
           for f in $(find $HOME/Athena-Out -name '*.iso*'); do
             gh release upload v23.11 $f --clobber
